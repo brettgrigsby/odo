@@ -1,4 +1,3 @@
-import DesktopARLayout from './DesktopARLayout'
 import { docFromImages } from '../utils/sceneBuilder'
 
 type IframePageProps = {
@@ -8,9 +7,7 @@ type IframePageProps = {
 const IframePage = (props: IframePageProps) => {
     const src = docFromImages(props.imageFilenames)
     return (
-        <DesktopARLayout>
-            <iframe style={{height: '100vh', width: '100vw' }} srcDoc={src} frameBorder='0' />
-        </DesktopARLayout>
+        <iframe style={{height: '100vh', width: '100vw' }} srcDoc={src} frameBorder='0' />
     )
 }
 

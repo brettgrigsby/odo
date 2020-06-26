@@ -35,7 +35,7 @@ const sceneFromImages = (imageNames: string[]): string => {
         `
     ), '')
     return (`
-        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
             <a-assets id="image-assets">
                 ${imgElements}
             </a-assets>
