@@ -5,12 +5,12 @@ const IndexPage = () => (
   <Layout title="Odo | every card game ever">
     <h1>Welcome to Odo</h1>
     <p>
-      <Link href="/brettiscool.html">
-        <a>Alpha Test Page</a>
+      <Link href="/iframe">
+        <a>GO PLAY</a>
       </Link>
     </p>
     <p>
-      If you'd like to play for yourself, build a fucking deck, asshole.
+      Here's where I include a link to PnP the deck or buy one.
     </p>
   </Layout>
 )
