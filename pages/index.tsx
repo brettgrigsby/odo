@@ -6,8 +6,11 @@ const IndexPage = () => (
     <h1>Welcome to Odo</h1>
     <p>
       <Link href="/brettiscool.html">
-        <a>Base Game</a>
+        <a>Alpha Test Page</a>
       </Link>
+    </p>
+    <p>
+      If you'd like to play for yourself, build a fucking deck, asshole.
     </p>
   </Layout>
 )
