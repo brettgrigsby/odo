@@ -15,9 +15,9 @@ const wrapARDocument = (content: string): string => {
     `)
 }
 
-const sceneFromImages = (imageNames: string[]): string => {
+const sceneFromImages = (imageNames: string[], path = ''): string => {
     const imgElements: string = imageNames.reduce((acc, imageName) => (
-        acc + `<img id="${imageName.split('.')[0]}" src="${imageName}" />`
+        acc + `<img id="${imageName.split('.')[0]}" src="${path + imageName}" />`
     ), '')
 
     const markerElements: string = imageNames.reduce((acc, imageName, idx) => (
@@ -51,8 +51,8 @@ const sceneFromImages = (imageNames: string[]): string => {
     `)
 }
 
-const docFromImages = (imageNames: string[]): string => (
-    wrapARDocument(sceneFromImages(imageNames))
+const docFromImages = (imageNames: string[], path: string): string => (
+    wrapARDocument(sceneFromImages(imageNames, path))
 )
 
 export { wrapARDocument, sceneFromImages, docFromImages }

@@ -12,8 +12,13 @@ const IndexPage = () => (
   <Layout title="Odo | every card game ever">
     <WebLayout>
       <h1>Welcome to Odo</h1>
+      <h3>Games:</h3>
       <div>
-        <h3>Games:</h3>
+        <Link href="/playingCards">
+          <a>Traditional Playing Cards</a>
+        </Link>
+      </div>
+      <div>
         <Link href="/mtg">
           <a>Magic: The Gathering</a>
         </Link>
