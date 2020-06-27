@@ -26,16 +26,19 @@ const sceneFromImages = (imageNames: string[]): string => {
                 <a-image
                     class="cardImage"
                     src="#${imageName.split('.')[0]}"
-                    position="0.6 0 1.1"
-                    width="2.5"
-                    height="3.5"
+                    position="0.9 0 1.4"
+                    width="3.25"
+                    height="4.5"
                     rotation="270 0 0"
                 />
             </a-marker>
         `
     ), '')
     return (`
-        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
+        <a-scene
+            embedded
+            arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'
+        >
             <a-assets id="image-assets">
                 ${imgElements}
             </a-assets>
