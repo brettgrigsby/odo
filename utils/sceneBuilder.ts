@@ -1,3 +1,5 @@
+import { GameScene } from "./gameBuilder"
+
 const wrapARDocument = (content: string): string => {
     return (`
         <!DOCTYPE html>
@@ -55,4 +57,41 @@ const docFromImages = (imageNames: string[], path: string): string => (
     wrapARDocument(sceneFromImages(imageNames, path))
 )
 
-export { wrapARDocument, sceneFromImages, docFromImages }
+const docFromGameScene = (gameScene: GameScene): string => {
+    const { elements } = gameScene
+    const imgElements: string = elements.reduce((acc, ele) => (
+        acc + `<img id="${ele.id}" src="${ele.imgSrc}" />`
+    ), '')
+
+    const markerElements: string = elements.reduce((acc, ele, idx) => (
+        acc + `
+            <a-marker type="barcode" value="${idx}">
+                <a-image
+                    class="cardImage"
+                    src="#${ele.id}"
+                    position="0.9 0 1.4"
+                    width="3.25"
+                    height="4.5"
+                    rotation="270 0 0"
+                />
+            </a-marker>
+        `
+    ), '')
+    return wrapARDocument(`
+        <a-scene
+            embedded
+            arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'
+        >
+            <a-assets id="image-assets">
+                ${imgElements}
+            </a-assets>
+
+            ${markerElements}
+
+            <!-- add a simple camera -->
+            <a-entity camera></a-entity>
+        </a-scene>
+    `)
+}
+
+export { wrapARDocument, sceneFromImages, docFromImages, docFromGameScene }
