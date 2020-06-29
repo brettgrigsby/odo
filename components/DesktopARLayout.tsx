@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { GameScene } from '../interfaces'
+import { ChangeEvent } from 'react'
 
 const arHeaderStyles = {
     position: 'fixed' as 'fixed',
@@ -15,23 +17,39 @@ const arHeaderStyles = {
 type ARLayoutProps = {
     title: string
     children: React.ReactNode
+    games: GameScene[]
+    handleGameChange: (gameName: string) => void
 }
 
-const DesktopARLayout = (props: ARLayoutProps) => (
-    <>
-        <div style={arHeaderStyles}>
-            <Link href="/">
-                <a style={{marginRight: 20}}>{'<- Back'}</a>    
-            </Link> 
-            <span>{props.title}</span>
-        </div>
-        {props.children}
-        <style jsx global>{`
-            body {
-                margin: 0;
-            }
-        `}</style>
-    </>
-)
+const DesktopARLayout = (props: ARLayoutProps) => {
+    const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        props.handleGameChange(event.target.value)
+    }
+
+    return (
+        <>
+            <div style={arHeaderStyles}>
+                <Link href="/">
+                    <a style={{marginRight: 20}}>{'<- Back'}</a>    
+                </Link> 
+                <span>{props.title}</span>
+                <label style={{ marginLeft: 20 }}>
+                    Change the current game:{' '}
+                    <select onChange={handleSelectChange}>
+                        { props.games.map(gs => (
+                            <option value={gs.name}>{gs.name}</option>
+                        ))}
+                    </select>
+                </label>
+            </div>
+            {props.children}
+            <style jsx global>{`
+                body {
+                    margin: 0;
+                }
+            `}</style>
+        </>
+    )
+}
 
 export default DesktopARLayout

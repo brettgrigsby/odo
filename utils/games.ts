@@ -1,4 +1,4 @@
-import { GameScene, GameSceneElement } from './gameBuilder'
+import { GameScene, GameSceneElement } from '../interfaces'
 
 const pcImages = [
     "10_of_clubs.png", "10_of_diamonds.png", "10_of_hearts.png",
@@ -29,8 +29,30 @@ const pcImages = [
 const playingCardsElements: GameSceneElement[] = pcImages.map(fileName => (
     { imgSrc: 'playingCards/' + fileName, id: fileName }
 ))
-const playingCards: GameScene = {
+
+export const playingCards: GameScene = {
+    name: 'Playing Cards',
     elements: playingCardsElements
 }
 
-export { playingCards }
+const mtgImages = ['black.jpeg', 'blue.jpeg', 'green.jpeg', 'red.jpeg']
+
+const mtgCardsElements: GameSceneElement[] = mtgImages.map(fileName => (
+    { imgSrc: fileName, id: fileName }
+))
+
+export const mtg: GameScene = {
+    name: 'Magic: The Gathering',
+    elements: mtgCardsElements
+}
+
+const destinyImages = ['luke.jpg', 'darth.jpg', 'han.jpg', 'trooper.jpg']
+
+const destinyCardsElements: GameSceneElement[] = destinyImages.map(fileName => (
+    { imgSrc: fileName, id: fileName }
+))
+
+export const destiny: GameScene = {
+    name: 'Star Wars: Destiny',
+    elements: destinyCardsElements
+}

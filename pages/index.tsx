@@ -12,25 +12,11 @@ const IndexPage = () => (
   <Layout title="Odo | every card game ever">
     <WebLayout>
       <h1>Welcome to Odo</h1>
-      <h3>Games:</h3>
       <div>
-        <Link href="/playingCards">
-          <a>Traditional Playing Cards</a>
+        <Link href="/app">
+          <a>Try the app!</a>
         </Link>
       </div>
-      <div>
-        <Link href="/mtg">
-          <a>Magic: The Gathering</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/destiny">
-          <a>Star Wars: Destiny</a>
-        </Link>
-      </div>
-      <p>
-        All games right now use the first 4 markers only (0 - 3).
-      </p>
       <p>
         If you would like to test, here are images for the first 4 cards of the custom deck:
       </p>

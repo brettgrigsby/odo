@@ -65,7 +65,7 @@ const docFromGameScene = (gameScene: GameScene): string => {
 
     const markerElements: string = elements.reduce((acc, ele, idx) => (
         acc + `
-            <a-marker type="barcode" value="${idx}">
+            <a-marker type="barcode" value="${idx}" smooth="true">
                 <a-image
                     class="cardImage"
                     src="#${ele.id}"
