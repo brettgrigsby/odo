@@ -1,5 +1,5 @@
 import { docFromGameScene } from '../utils/sceneBuilder'
-import { GameScene } from '../utils/gameBuilder'
+import { GameScene } from '../interfaces'
 
 type IframePageProps = {
     gameScene: GameScene
