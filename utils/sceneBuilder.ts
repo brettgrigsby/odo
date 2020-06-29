@@ -1,4 +1,5 @@
 import { GameScene } from "./gameBuilder"
+import { GameSceneElement } from "../interfaces"
 
 const wrapARDocument = (content: string): string => {
     return (`
@@ -59,11 +60,11 @@ const docFromImages = (imageNames: string[], path: string): string => (
 
 const docFromGameScene = (gameScene: GameScene): string => {
     const { elements } = gameScene
-    const imgElements: string = elements.reduce((acc, ele) => (
+    const imgElements: string = elements.reduce((acc: string, ele: GameSceneElement) => (
         acc + `<img id="${ele.id}" src="${ele.imgSrc}" />`
     ), '')
 
-    const markerElements: string = elements.reduce((acc, ele, idx) => (
+    const markerElements: string = elements.reduce((acc: string, ele: GameSceneElement, idx: number) => (
         acc + `
             <a-marker type="barcode" value="${idx}" smooth="true">
                 <a-image
