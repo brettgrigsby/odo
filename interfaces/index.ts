@@ -1,6 +1,7 @@
 export type GameSceneElement = {
   id: string
   imgSrc: string
+  metaData?: string
   height?: number
   width?: number
   position?: [number, number, number]

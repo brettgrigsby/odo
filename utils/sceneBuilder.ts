@@ -74,6 +74,8 @@ const docFromGameScene = (gameScene: GameScene): string => {
                     height="4.5"
                     rotation="270 0 0"
                 />
+                <a-text position="2 0 0" wrap-count="20" value="${ele.metaData}"></a-text>
+                <a-plane color="#000" opacity="0.5" position="4.4 0 -0.3" height="2.5" width="5.2"></a-plane>
             </a-marker>
         `
     ), '')

@@ -35,10 +35,14 @@ export const playingCards: GameScene = {
     elements: playingCardsElements
 }
 
-const mtgImages = ['black.jpeg', 'blue.jpeg', 'green.jpeg', 'red.jpeg']
+const mtgImages = ['blue.png', 'black.jpeg', 'green.jpeg', 'red.jpeg']
 
 const mtgCardsElements: GameSceneElement[] = mtgImages.map(fileName => (
-    { imgSrc: fileName, id: fileName }
+    {
+        imgSrc: fileName,
+        id: fileName,
+        metaData: 'Prowess: Whenever you cast a non-creature spell, this creature get +1/+1 until end of turn.'
+    }
 ))
 
 export const mtg: GameScene = {
