@@ -1,5 +1,4 @@
-import { GameScene } from "./gameBuilder"
-import { GameSceneElement } from "../interfaces"
+import { GameScene, GameSceneElement } from "../interfaces"
 
 const wrapARDocument = (content: string): string => {
     return (`
