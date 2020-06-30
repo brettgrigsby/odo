@@ -80,7 +80,7 @@ const docFromGameScene = (gameScene: GameScene): string => {
     return wrapARDocument(`
         <a-scene
             embedded
-            arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'
+            arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: true;'
         >
             <a-assets id="image-assets">
                 ${imgElements}
