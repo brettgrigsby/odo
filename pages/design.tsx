@@ -1,17 +1,9 @@
 import { useState } from 'react'
-import DesignerHeader from '../components/DesignerHeader'
 import IframeFromGameScene from '../components/IframeFromGameScene'
 import { GameScene, GameSceneElement } from '../interfaces'
 
-const buildSceneFromLocalImages = (images): GameScene => {
-    return {
-        name: 'Designer Mode',
-        elements: []
-    }
-}
-
 const resetButtonStyles = {
-    position: 'fixed',
+    position: 'fixed' as 'fixed',
     top: 10,
     left: 10,
     borderRadius: 5,
@@ -24,14 +16,7 @@ const resetButtonStyles = {
 const DesignerPage = () => {
     const [gameScene, setGameScene] = useState<GameScene | undefined>(undefined)
 
-    const handleImagesUpload = (images: string[]): void => {
-        // TODO allow images to be 'uploaded'
-        // store images in localStorage?
-        // eventually upload game data to share on the network
-        setGameScene(buildSceneFromLocalImages(images))
-    }
-
-    const handleFiles = (e) => {
+    const handleFiles = (e: any) => {
         const { files } = e.target
         const gameElements: GameSceneElement[] = []
         for (let file of files) {
