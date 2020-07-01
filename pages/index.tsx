@@ -17,6 +17,11 @@ const IndexPage = () => (
           <a>Try the app!</a>
         </Link>
       </div>
+      <div>
+        <Link href="/design">
+          <a>Use your own card images!</a>
+        </Link>
+      </div>
       <p>
         If you would like to test, here are images for the first 4 cards of the custom deck:
       </p>
