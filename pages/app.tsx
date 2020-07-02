@@ -1,27 +1,24 @@
 import { useState } from 'react'
-import DesktopARLayout from '../components/DesktopARLayout'
-import IframeFromGameScene from '../components/IframeFromGameScene'
+import Layout from '../components/Layout'
+import IframeFromGame from '../components/IframeFromGame'
 import { playingCards, mtg, destiny } from '../utils/games'
-import { GameScene } from '../interfaces'
+import { Game } from '../interfaces'
+import AppHeader from '../components/AppHeader'
 
 const games = [ playingCards, mtg, destiny ]
 
 const AppPage = () => {
-    const [gameScene, setGameScene] = useState(playingCards)
+    const [game, setGame] = useState(playingCards)
 
-    const handleGameChange = (gameName: string): void => {
-        const gameScene: GameScene = games.find(gs => gs.name === gameName) || playingCards
-        setGameScene(gameScene)
+    const changeGame = (newGame: Game): void => {
+        setGame(newGame)
     }
 
     return (
-        <DesktopARLayout
-            title={gameScene.name}
-            games={games}
-            handleGameChange={handleGameChange}
-        >
-            <IframeFromGameScene gameScene={gameScene} />
-        </DesktopARLayout>
+        <Layout>
+            <AppHeader changeGame={changeGame} games={games} />
+            <IframeFromGame game={game} />
+        </Layout>
     )
 }
 

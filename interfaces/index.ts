@@ -17,3 +17,13 @@ export type GameScene = {
   elements: GameSceneElement[]
   functions?: SceneFunction[]
 }
+
+export type GameElement = {
+  id: string
+  imgSrc: string
+}
+
+export type Game = {
+  name: string
+  elements: GameElement[]
+}

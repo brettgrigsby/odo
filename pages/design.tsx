@@ -1,46 +1,36 @@
 import { useState } from 'react'
-import IframeFromGameScene from '../components/IframeFromGameScene'
-import { GameScene, GameSceneElement } from '../interfaces'
-
-const resetButtonStyles = {
-    position: 'fixed' as 'fixed',
-    top: 10,
-    left: 10,
-    borderRadius: 5,
-    backgroundColor: 'green',
-    width: 100,
-    padding: 10,
-    cursor: 'pointer'
-}
+import { Game, GameElement } from '../interfaces'
+import DesignHeader from '../components/DesignHeader'
+import IframeFromGame from '../components/IframeFromGame'
+import Layout from '../components/Layout'
 
 const DesignerPage = () => {
-    const [gameScene, setGameScene] = useState<GameScene | undefined>(undefined)
+    const [game, setGame] = useState<Game | undefined>(undefined)
 
     const handleFiles = (e: any) => {
         const { files } = e.target
-        const gameElements: GameSceneElement[] = []
+        const gameElements: GameElement[] = []
         for (let file of files) {
             const imgSrc = URL.createObjectURL(file)
             gameElements.push({ id: imgSrc, imgSrc })
         }
-        const newScene: GameScene = {
+        const newScene: Game = {
             name: 'local design',
             elements: gameElements
         }
-        setGameScene(newScene)
+        setGame(newScene)
+    }
+
+    const resetGame = (): void => {
+        setGame(undefined)
     }
 
     const renderGameOrMessage = () => {
-        if (gameScene) {
+        if (game) {
             return (
                 <>
-                    <div
-                        onClick={removeCardSet}
-                        style={resetButtonStyles}
-                    >
-                        Change Cards
-                    </div>
-                    <IframeFromGameScene gameScene={gameScene} />
+                    <DesignHeader resetGame={resetGame} />
+                    <IframeFromGame game={game} />
                 </>
             )
         }
@@ -58,14 +48,10 @@ const DesignerPage = () => {
         )
     }
 
-    const removeCardSet = () => {
-        setGameScene(undefined)
-    }
-
     return (
-        <>
+        <Layout>
             {renderGameOrMessage()}
-        </>
+        </Layout>
     )
 }
 
