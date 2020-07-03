@@ -18,6 +18,7 @@ const DesignHeader = (props: DesignHeaderProps): React.ReactElement => {
                     top: 10px;
                     left: 30px;
                     background-color: white;
+                    border: 1px solid black;
                     border-radius: 5px;
                     cursor: pointer;
                     padding: 5px 15px;

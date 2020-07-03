@@ -35,8 +35,13 @@ const DesignerPage = () => {
             )
         }
         return (
-            <div>
-                <p>You need to add cards to render a game.</p>
+            <div style={{ padding: 30 }}>
+                <p>
+                    You must to add card images to render a game.
+                </p>
+                <p>
+                    Make sure you select all of the cards you wish to use at once.
+                </p>
                 <input
                     type="file"
                     name="cardInput"
