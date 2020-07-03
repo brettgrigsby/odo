@@ -1,41 +1,57 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 
-const cardImageStyles = {
-  border: '1px solid black',
-  borderRadius: 5,
-  marginRight: 10
-}
 
 const IndexPage = () => (
   <Layout title="Odo | every card game ever">
-    <h1>Welcome to Odo</h1>
-    <div>
-      <Link href="/app">
-        <a>Try the app!</a>
+    <div className='index-container'>
+      <h1>ODO</h1>
+      <Link href='/pnpinstructions'>
+        <div className='pnp-button index-button'>
+          Print and Play Instructions
+        </div>
       </Link>
+      <div className='post-deck-buttons'>
+        <Link href='/app'>
+          <div className='app-button index-button'>
+            Play
+          </div>
+        </Link>
+        <Link href='/design'>
+          <div className='app-button index-button'>
+            Design
+          </div>
+        </Link>
+      </div>
     </div>
-    <div>
-      <Link href="/design">
-        <a>Use your own card images!</a>
-      </Link>
-    </div>
-    <p>
-      If you would like to test, here are images for the first 4 cards of the custom deck:
-    </p>
-    <div>
-      <img style={cardImageStyles} width="200" src="0.png" />
-      <img style={cardImageStyles} width="200" src="1.png" />
-      <img style={cardImageStyles} width="200" src="2.png" />
-      <img style={cardImageStyles} width="200" src="3.png" />
-    </div>
-    <p>
-      Credit to <a href="http://ar2go.squaretone.com/barcode">ar2go</a> for the barcode marker images.
-    </p>
-    <p>
-      Not sure what to do? Open one of these images on your phone and show it to your webcam on your
-      computer with one of the above games open.
-    </p>
+    <style jsx>{`
+        .index-container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+        .post-deck-buttons {
+          display: flex;
+          justify-content: space-between;
+          padding: 30px 0;
+        }
+        .index-button {
+          border: 1px solid black;
+          border-radius: 5px;
+          padding: 10px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .app-button {
+          width: 300px;
+          height: 200px;
+        }
+        .pnp-button {
+          height: 100px;
+        }
+    `}</style>
   </Layout>
 )
 
