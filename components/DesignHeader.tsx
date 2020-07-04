@@ -2,7 +2,7 @@ type DesignHeaderProps = {
     resetGame: () => void
 }
 
-const DesignHeader = (props: DesignHeaderProps): React.ReactElement => {
+const DesignHeader = (props: DesignHeaderProps) => {
     const handleResetGame = () => {
         props.resetGame()
     }

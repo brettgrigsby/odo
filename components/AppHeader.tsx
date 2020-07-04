@@ -5,7 +5,7 @@ type AppHeaderProps = {
     changeGame: (game: Game) => void
 }
 
-const AppHeader = (props: AppHeaderProps): React.ReactElement => {
+const AppHeader = (props: AppHeaderProps) => {
     const handleGameChange = (e: any): void => {
        const name = e.target.value
        const newGame = props.games.find(game => game.name === name) || props.games[0]
