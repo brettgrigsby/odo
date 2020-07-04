@@ -1,4 +1,4 @@
-import { GameScene, GameSceneElement } from '../interfaces'
+import { Game, GameElement } from '../interfaces'
 
 const pcImages = [
     "10_of_clubs.png", "10_of_diamonds.png", "10_of_hearts.png",
@@ -26,33 +26,37 @@ const pcImages = [
     "red_joker.png"
 ]
 
-const playingCardsElements: GameSceneElement[] = pcImages.map(fileName => (
+const playingCardsElements: GameElement[] = pcImages.map(fileName => (
     { imgSrc: 'playingCards/' + fileName, id: fileName }
 ))
 
-export const playingCards: GameScene = {
+export const playingCards: Game = {
     name: 'Playing Cards',
     elements: playingCardsElements
 }
 
-const mtgImages = ['black.jpeg', 'blue.jpeg', 'green.jpeg', 'red.jpeg']
+const loveLetterElements: GameElement[] = [
+    { imgSrc: 'loveLetter/quickReference.png', id: 'quickReference'},
+    { imgSrc: 'loveLetter/cardList.png', id: 'cardList'},
+    { imgSrc: 'loveLetter/guard.png', id: 'guard1'},
+    { imgSrc: 'loveLetter/guard.png', id: 'guard2'},
+    { imgSrc: 'loveLetter/guard.png', id: 'guard3'},
+    { imgSrc: 'loveLetter/guard.png', id: 'guard4'},
+    { imgSrc: 'loveLetter/guard.png', id: 'guard5'},
+    { imgSrc: 'loveLetter/priest.png', id: 'priest1'},
+    { imgSrc: 'loveLetter/priest.png', id: 'priest2'},
+    { imgSrc: 'loveLetter/baron.png', id: 'baron1'},
+    { imgSrc: 'loveLetter/baron.png', id: 'baron2'},
+    { imgSrc: 'loveLetter/handmaid.png', id: 'handmaid1'},
+    { imgSrc: 'loveLetter/handmaid.png', id: 'handmaid2'},
+    { imgSrc: 'loveLetter/prince.png', id: 'prince1'},
+    { imgSrc: 'loveLetter/prince.png', id: 'prince2'},
+    { imgSrc: 'loveLetter/countess.png', id: 'countess'},
+    { imgSrc: 'loveLetter/king.png', id: 'king'},
+    { imgSrc: 'loveLetter/princess.png', id: 'princess'}
+]
 
-const mtgCardsElements: GameSceneElement[] = mtgImages.map(fileName => (
-    { imgSrc: fileName, id: fileName }
-))
-
-export const mtg: GameScene = {
-    name: 'Magic: The Gathering',
-    elements: mtgCardsElements
-}
-
-const destinyImages = ['luke.jpg', 'darth.jpg', 'han.jpg', 'trooper.jpg']
-
-const destinyCardsElements: GameSceneElement[] = destinyImages.map(fileName => (
-    { imgSrc: fileName, id: fileName }
-))
-
-export const destiny: GameScene = {
-    name: 'Star Wars: Destiny',
-    elements: destinyCardsElements
+export const loveLetter: Game = {
+    name: 'Love Letter',
+    elements: loveLetterElements
 }

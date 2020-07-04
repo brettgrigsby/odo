@@ -16,7 +16,9 @@ const AppHeader = (props: AppHeaderProps) => {
         <>
             <div className='app-header'>
                 <select onChange={handleGameChange}>
-                    {props.games.map((game: Game) => <option value={game.name}>{game.name}</option>)}
+                    {props.games.map((game: Game) => (
+                        <option key={game.name} value={game.name}>{game.name}</option>
+                    ))}
                 </select>
             </div>
             <style jsx>{`
