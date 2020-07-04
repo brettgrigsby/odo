@@ -26,7 +26,7 @@ const srcDocFromGame = (game: Game): string => {
     // TODO: experiment more with <a-marker smooth="true">
     const markerElements: string = elements.reduce((acc: string, ele: GameElement, idx: number) => (
         acc + `
-            <a-marker type="barcode" value="${idx}">
+            <a-marker type="barcode" value="${idx}" smooth="true">
                 <a-image
                     class="cardImage"
                     src="#${ele.id}"
