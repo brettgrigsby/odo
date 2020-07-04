@@ -1,6 +1,6 @@
 # Odo
 
-Odo is every card game ever that ever was ever.
+Every card game ever that ever was ever.
 
 ### Running Locally
 
@@ -15,8 +15,3 @@ npm run dev
 yarn
 yarn dev
 ```
-
-### The Cards
-
-The cards used in this app currently used barcode markers. Here's a great site to grab and print the markers:
-http://ar2go.squaretone.com/barcode

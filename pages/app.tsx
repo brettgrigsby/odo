@@ -15,7 +15,7 @@ const AppPage = () => {
     }
 
     return (
-        <Layout>
+        <Layout title="ODO | App">
             <AppHeader changeGame={changeGame} games={games} />
             <IframeFromGame game={game} />
         </Layout>

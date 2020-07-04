@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 
 
 const IndexPage = () => (
-  <Layout title="Odo | every card game ever">
+  <Layout title="ODO | Every Card Game Ever">
     <div className='index-container'>
       <h1>ODO</h1>
       <Link href='/pnpinstructions'>

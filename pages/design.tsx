@@ -37,10 +37,11 @@ const DesignerPage = () => {
         return (
             <div style={{ padding: 30 }}>
                 <p>
-                    You must to add card images to render a game.
+                    Select the images you would like to use in your game.
                 </p>
                 <p>
-                    Make sure you select all of the cards you wish to use at once.
+                    Once you have selected your images, they will be automatically mapped to
+                    your ODO deck and displayed.
                 </p>
                 <input
                     type="file"
@@ -54,7 +55,7 @@ const DesignerPage = () => {
     }
 
     return (
-        <Layout>
+        <Layout title="ODO | Design">
             {renderGameOrMessage()}
         </Layout>
     )
