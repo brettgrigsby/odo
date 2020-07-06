@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Layout from '../components/Layout'
 import IframeFromGame from '../components/IframeFromGame'
-import { playingCards, loveLetter } from '../utils/games'
+import { playingCards, loveLetter, secretHitler } from '../utils/games'
 import { Game } from '../interfaces'
 import AppHeader from '../components/AppHeader'
 
-const games = [ playingCards, loveLetter ]
+const games = [ playingCards, loveLetter, secretHitler ]
 
 const AppPage = () => {
     const [game, setGame] = useState(playingCards)

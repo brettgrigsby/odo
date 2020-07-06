@@ -30,9 +30,9 @@ const srcDocFromGame = (game: Game): string => {
                 <a-image
                     class="cardImage"
                     src="#${ele.id}"
-                    position="0.9 0 1.4"
-                    width="3.25"
-                    height="4.5"
+                    position="${ele.position?.join(' ') || '0.9 0 1.4'}"
+                    width="${ele.width || 3.25}"
+                    height="${ele.height || 4.5}"
                     rotation="270 0 0"
                 />
             </a-marker>

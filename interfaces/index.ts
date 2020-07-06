@@ -1,6 +1,9 @@
 export type GameElement = {
   id: string
   imgSrc: string
+  height?: number
+  width?: number
+  position?: [number, number, number]
 }
 
 export type Game = {
