@@ -24,7 +24,18 @@ const IndexPage = () => (
           </div>
         </Link>
       </div>
+      <h3>Here's me using ODO:</h3>
+      <div className='video-container'>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/eXb0WXXVkBU"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
+
     <style jsx>{`
         .index-container {
             max-width: 700px;
@@ -53,6 +64,9 @@ const IndexPage = () => (
         }
         .pnp-button {
           height: 100px;
+        }
+        .video-container {
+          padding-bottom: 80px;
         }
     `}</style>
   </Layout>
