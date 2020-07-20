@@ -27,7 +27,7 @@ const IndexPage = () => (
       <h3>Here's me using ODO:</h3>
       <div className='video-container'>
         <iframe
-          width="560"
+          width="100%"
           height="315"
           src="https://www.youtube.com/embed/eXb0WXXVkBU"
           frameBorder="0"
